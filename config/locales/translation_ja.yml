@@ -16,3 +16,9 @@ ja:
     destroy: 削除
     new_book: 新規作成
     back: 戻る
+
+  notice:
+    book:
+      created: 本が作成されました。
+      updated: 本が更新されました。
+      destroyed: 本が削除されました。
