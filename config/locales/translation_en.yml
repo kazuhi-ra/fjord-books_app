@@ -9,3 +9,10 @@ en:
         memo: Memo  #g
         picture: Picture  #g
         title: Title  #g
+
+  common:
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    new_book: New Book
+    back: Back

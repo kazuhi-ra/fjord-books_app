@@ -9,3 +9,10 @@ ja:
         memo: メモ  #g
         picture: 写真  #g
         title: タイトル  #g
+
+  common:
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    new_book: 新規作成
+    back: 戻る
