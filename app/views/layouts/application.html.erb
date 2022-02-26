@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <header>
+      <% if user_signed_in? %>
+        <ul style="display: flex; list-style: none; justify-content: space-between; max-width: 280px; padding-inline-start: initial;">
+          <li><%= link_to Book.model_name.human, books_path %></li>
+          <li><%= link_to User.model_name.human, users_path %></li>
+          <li><%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %></li>
+        </ul>
+      <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>
