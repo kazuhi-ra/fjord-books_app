@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :books
   resources :users, only: %i(index show)
-  post 'follow/:id' => 'follows#create', as: :follow
+  post 'follows/:id' => 'follows#create', as: :follow
+  delete 'follows/:id' => 'follows#destroy', as: :unfollow
 end

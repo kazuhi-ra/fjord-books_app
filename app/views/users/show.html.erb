@@ -38,7 +38,9 @@
 <% end %>
 
 <% if current_user.following?(@user) %>
-  <div>TODO: フォロー解除ボタンに変更 フォローしています</div>
+  <%= form_with url: unfollow_path(@user), method: :delete, local: true do |f| %>
+    <%= f.submit 'TODO: i18n フォロー解除' %>
+  <% end %>
 <% elsif current_user != @user %>
   <%= form_with url: follow_path(@user), local: true do |f| %>
     <%= f.submit 'TODO: i18n フォローする' %>
