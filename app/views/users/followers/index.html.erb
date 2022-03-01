@@ -1,7 +1,7 @@
-<h1>TODO: i18n フォロワー</h1>
+<h1><%= User.human_attribute_name(:follower) %></h1>
 
 <% if @followers.blank? %>
-  <div>TODO: i18n フォロワーはいません</div>
+  <div><%= t('views.common.blank_data', data: User.human_attribute_name(:follower)) %></div>
 <% else %>
   <table>
     <thead>

@@ -1,7 +1,7 @@
-<h1>TODO: i18n フォローしているユーザー</h1>
+<h1><%= User.human_attribute_name(:followee) %></h1>
 
 <% if @followings.blank? %>
-  <div>フォローしているユーザーはいません</div>
+  <div><%= t('views.common.blank_data', data: User.human_attribute_name(:followee)) %></div>
 <% else %>
   <table>
     <thead>

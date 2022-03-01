@@ -1,10 +1,10 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
 <p>
-  <%= link_to "TODO: i18n #{@user.followings.count} フォロー中", user_followings_path(@user) %> <br />
+  <%= link_to t('views.follows.followings', count: @user.followings.count), user_followings_path(@user) %> <br />
 </p>
 <p>
-  <%= link_to "TODO: i18n #{@user.followers.count} フォロワー", user_followers_path(@user) %> <br />
+  <%= link_to t('views.follows.followers', count: @user.followers.count), user_followers_path(@user) %> <br />
 </p>
 
 <p>
@@ -47,11 +47,11 @@
 
 <% if current_user.following?(@user) %>
   <%= form_with url: unfollow_path(@user), method: :delete, local: true do |f| %>
-    <%= f.submit 'TODO: i18n フォロー解除' %>
+    <%= f.submit t('views.follows.destroy') %>
   <% end %>
 <% elsif current_user != @user %>
   <%= form_with url: follow_path(@user), local: true do |f| %>
-    <%= f.submit 'TODO: i18n フォローする' %>
+    <%= f.submit t('views.follows.create') %>
   <% end %>
 <% end %>
 
