@@ -1,6 +1,13 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
 <p>
+  <%= link_to "TODO: i18n #{@user.followings.count} フォロー中", user_followings_path(@user) %> <br />
+</p>
+<p>
+  <%= link_to "TODO: i18n #{@user.followers.count} フォロワー", user_followers_path(@user) %> <br />
+</p>
+
+<p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
 </p>
@@ -33,6 +40,7 @@
   <% end %>
 </p>
 
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
@@ -46,6 +54,5 @@
     <%= f.submit 'TODO: i18n フォローする' %>
   <% end %>
 <% end %>
-<%= link_to 'TODO: i18n フォローしているユーザー', user_followings_path(@user) %> <br />
-<%= link_to 'TODO: i18n フォロワー', user_followers_path(@user) %> <br />
+
 <%= link_to t('views.common.back'), users_path %>
