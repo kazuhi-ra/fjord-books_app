@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :books
   resources :users, only: %i(index show)
+  post 'follow/:id' => 'follows#create', as: :follow
 end

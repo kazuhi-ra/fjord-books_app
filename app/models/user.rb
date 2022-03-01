@@ -11,11 +11,15 @@ class User < ApplicationRecord
   has_many :followings, through: :follower, source: :followee
   has_many :followers, through: :followee, source: :follower
 
-  def follow(user_id)
-    follower.find_or_create_by(followee_id: user_id)
+  def follow(user)
+    follower.find_or_create_by(followee_id: user.id)
   end
 
-  def unfollow(user_id)
-    follower.find_by(followee_id: user_id)&.destroy
+  def unfollow(user)
+    follower.find_by(followee_id: user.id)&.destroy
+  end
+
+  def following?(user)
+    follower.where(followee_id: user.id).exists?
   end
 end
