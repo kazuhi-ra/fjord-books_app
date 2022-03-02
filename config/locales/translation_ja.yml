@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      book: 本  #g
+
+    attributes:
+      book:
+        author: 著者  #g
+        memo: メモ  #g
+        picture: 写真  #g
+        title: タイトル  #g
+
+  common:
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    new_book: 新規作成
+    back: 戻る
+
+  notice:
+    common:
+      created: "%{name}が作成されました。"
+      updated: "%{name}が更新されました。"
+      destroyed: "%{name}が削除されました。"
