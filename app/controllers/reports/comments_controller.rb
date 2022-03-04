@@ -4,7 +4,7 @@ class Reports::CommentsController < ApplicationController
     new_comment = report.comments.new(content: comment_params[:content],user: current_user)
 
     if new_comment.save
-      redirect_to report, notice: t('controllers.common.notice_comment_created')
+      redirect_to report, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       redirect_to report, alert: new_comment.errors.full_messages
     end
