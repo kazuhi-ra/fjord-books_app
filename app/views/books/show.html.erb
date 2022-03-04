@@ -33,5 +33,14 @@
   <% end %>
 </div>
 
+<%= form_with model: [@book, @book.comments.new], local: true do |form| %>
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <%= link_to t('views.common.back'), books_path %>

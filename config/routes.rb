@@ -16,4 +16,9 @@ Rails.application.routes.draw do
       resources :comments, only: %i[create]
     end
   end
+  resources :books, only: %i[show] do
+    scope module: :books do
+      resources :comments, only: %i[create]
+    end
+  end
 end
