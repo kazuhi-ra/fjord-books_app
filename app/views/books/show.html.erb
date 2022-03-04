@@ -27,7 +27,10 @@
 <div class="comments-wrapper">
   <% @book.comments.each do |comment| %>
     <div class="comment-wrapper">
-      <div><%= comment.user.name || comment.user.email %></div>
+      <div>
+        <%= comment.user.name || comment.user.email %> |
+        <%= l comment.created_at, format: :short %>
+      </div>
       <div><%= comment.content %></div>
     </div>
   <% end %>
