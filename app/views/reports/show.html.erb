@@ -13,4 +13,15 @@
 <% if @report.editable? current_user %>
   <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>
-<%= link_to t('views.common.back'), reports_path %>
+
+<h2><%= Comment.model_name.human %></h2>
+<div class="comments-wrapper">
+  <% @report.comments.each do |comment| %>
+    <div class="comment-wrapper">
+      <div><%= comment.user.name || comment.user.email %></div>
+      <div><%= comment.content %></div>
+    </div>
+  <% end %>
+</div>
+
+<br /><%= link_to t('views.common.back'), reports_path %>
