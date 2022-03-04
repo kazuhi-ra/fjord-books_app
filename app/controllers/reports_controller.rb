@@ -65,7 +65,7 @@ class ReportsController < ApplicationController
 
     def check_permission
       if current_user.id != @report.user_id
-        redirect_to reports_url, notice: t('errors.messages.permission_denied')
+        redirect_to reports_url, alert: t('errors.messages.permission_denied')
       end
     end
 
