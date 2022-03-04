@@ -11,7 +11,7 @@
 </p>
 
 <% if @report.editable? current_user %>
-  <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
+  <%= link_to t('views.common.edit'), edit_report_path(@report) %>
 <% end %>
 
 <%= render 'lib/comments', comments: @report.comments %>
