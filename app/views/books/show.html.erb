@@ -22,19 +22,7 @@
 
 <%= link_to t('views.common.edit'), edit_book_path(@book) %>
 
-
-<h2><%= Comment.model_name.human %></h2>
-<div class="comments-wrapper">
-  <% @book.comments.each do |comment| %>
-    <div class="comment-wrapper">
-      <div>
-        <%= comment.user.name || comment.user.email %> |
-        <%= l comment.created_at, format: :short %>
-      </div>
-      <div><%= comment.content %></div>
-    </div>
-  <% end %>
-</div>
+<%= render 'lib/comments', comments: @book.comments %>
 
 <%= form_with model: [@book, @book.comments.new], local: true do |form| %>
   <div class="field">

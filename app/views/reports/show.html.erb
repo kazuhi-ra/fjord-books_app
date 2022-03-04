@@ -14,18 +14,7 @@
   <%= link_to t('views.common.edit'), edit_report_path(@report) %> |
 <% end %>
 
-<h2><%= Comment.model_name.human %></h2>
-<div class="comments-wrapper">
-  <% @report.comments.each do |comment| %>
-    <div class="comment-wrapper">
-      <div>
-        <%= comment.user.name || comment.user.email %> |
-        <%= l comment.created_at, format: :short %>
-      </div>
-      <div><%= comment.content %></div>
-    </div>
-  <% end %>
-</div>
+<%= render 'lib/comments', comments: @report.comments %>
 
 <%= form_with model: [@report, @report.comments.new], local: true do |form| %>
   <div class="field">
