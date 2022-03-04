@@ -1,7 +1,7 @@
 class Reports::CommentsController < ApplicationController
   def create
     report = Report.find(report_id)
-    new_comment = report.comments.new(content: comment_params[:content],user: current_user)
+    new_comment = report.comments.new(content: comment_params[:content], user: current_user)
 
     if new_comment.save
       redirect_to report, notice: t('controllers.common.notice_create', name: Comment.model_name.human)

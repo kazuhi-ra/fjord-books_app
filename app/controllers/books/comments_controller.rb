@@ -1,7 +1,7 @@
 class Books::CommentsController < ApplicationController
   def create
     book = Book.find(book_id)
-    new_comment = book.comments.new(content: comment_params[:content],user: current_user)
+    new_comment = book.comments.new(content: comment_params[:content], user: current_user)
 
     if new_comment.save
       redirect_to book, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
