@@ -1,7 +1,7 @@
 <%= form_with model: [commentable, commentable.comments.new], local: true do |form| %>
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_field :content, required: true %>
+    <%= form.text_area :content, required: true %>
   </div>
   <div class="actions">
     <%= form.submit %>
