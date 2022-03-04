@@ -16,14 +16,6 @@
 
 <%= render 'lib/comments', comments: @report.comments %>
 
-<%= form_with model: [@report, @report.comments.new], local: true do |form| %>
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content, required: true  %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render 'lib/comment_form', commentable: @report %>
 
 <br /><%= link_to t('views.common.back'), reports_path %>

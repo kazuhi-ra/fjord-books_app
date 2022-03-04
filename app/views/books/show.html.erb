@@ -24,14 +24,6 @@
 
 <%= render 'lib/comments', comments: @book.comments %>
 
-<%= form_with model: [@book, @book.comments.new], local: true do |form| %>
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content, required: true %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= render 'lib/comment_form', commentable: @book %>
 
 <%= link_to t('views.common.back'), books_path %>
