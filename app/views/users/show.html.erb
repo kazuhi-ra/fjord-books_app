@@ -9,6 +9,21 @@
 </p>
 
 <p>
+  <strong><%= User.human_attribute_name(:postal_code) %>:</strong>
+  <%= @user.postal_code %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:address) %>:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name(:profile) %>:</strong>
+  <%= @user.profile %>
+</p>
+
+<p>
   <strong><%= User.human_attribute_name(:created_at) %>:</strong>
   <%= @user.created_at %>
 </p>
