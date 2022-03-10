@@ -16,7 +16,7 @@
     <% @users.each do |user| %>
       <tr>
         <td>
-          <%= render('avatar', user: user, size: 40) if user.avatar.attached? %>
+          <%= avatar(user: user, size: 40) if user.avatar.attached? %>
         </td>
         <td><%= user.email %></td>
         <td><%= user.name %></td>

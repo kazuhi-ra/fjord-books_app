@@ -2,7 +2,7 @@
 
 <p>
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
-  <%= render('avatar', user: @user, size: 100) if @user.avatar.attached? %>
+  <%= avatar(user: @user, size: 100) if @user.avatar.attached? %>
 </p>
 
 <p>
