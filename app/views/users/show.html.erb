@@ -1,6 +1,13 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
 <p>
+  <%= link_to t('views.follows.followings', count: @user.followings.count), user_followings_path(@user) %> <br />
+</p>
+<p>
+  <%= link_to t('views.follows.followers', count: @user.followers.count), user_followers_path(@user) %> <br />
+</p>
+
+<p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
 </p>
@@ -33,7 +40,19 @@
   <% end %>
 </p>
 
+
 <% if current_user == @user %>
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
+
+<% if current_user.following?(@user) %>
+  <%= form_with url: unfollow_path(@user), method: :delete, local: true do |f| %>
+    <%= f.submit t('views.follows.destroy') %>
+  <% end %>
+<% elsif current_user != @user %>
+  <%= form_with url: follow_path(@user), local: true do |f| %>
+    <%= f.submit t('views.follows.create') %>
+  <% end %>
+<% end %>
+
 <%= link_to t('views.common.back'), users_path %>

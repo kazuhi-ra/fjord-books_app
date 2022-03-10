@@ -218,12 +218,20 @@ ja:
       title_show: "%{name}の詳細"
       sign_out: ログアウト
       minimum_length: "%{length}文字以上"
+      blank_data: "%{data}は存在しません"
     pagination:
       first: '最初'
       last: '最後'
       previous: '前'
       next: '次'
       truncate: '...'
+    follows:
+      follow: フォロー
+      follower: フォロワー
+      create: フォローする
+      destroy: フォローを解除
+      followings: "%{count} フォロー中"
+      followers: "%{count} フォロワー"
   controllers:
     common:
       notice_create: "%{name}が作成されました。"
