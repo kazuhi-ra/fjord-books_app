@@ -1,0 +1,16 @@
+// Place all the styles related to the reports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.comments-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-width: 200px;
+}
+
+.comment-wrapper {
+  padding: 8px;
+  margin-bottom: 8px;
+  border: solid;
+  overflow-wrap: break-word;
+}
