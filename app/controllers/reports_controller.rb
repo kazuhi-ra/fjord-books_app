@@ -60,7 +60,7 @@ class ReportsController < ApplicationController
   end
 
   def check_permission
-    redirect_to reports_url, alert: t('errors.messages.permission_denied') if current_user.id != @report.user_id
+    redirect_to reports_url, alert: t('errors.messages.permission_denied') unless @report.editable?(current_user)
   end
 
   # Only allow a list of trusted parameters through.
